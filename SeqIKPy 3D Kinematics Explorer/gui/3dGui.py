@@ -1,10 +1,8 @@
 import sys
-import os
 import io
 import zipfile
 from pathlib import Path
 import numpy as np
-import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
