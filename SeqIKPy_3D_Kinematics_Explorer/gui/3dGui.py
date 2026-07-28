@@ -371,17 +371,12 @@ def crop():
             min_frame=num_left.number_input("From:",min_value=0,max_value=num_frames_original-1,step=1,value=0)
             max_frame=num_right.number_input("To:",min_value=0,max_value=num_frames_original-1,step=1,value=num_frames_original-1)
             
-            if not ((max_frame<min_frame) or (min_frame==0 and max_frame==num_frames_original-1)):
+            if not ((max_frame<=min_frame) or (min_frame==0 and max_frame==num_frames_original-1)):
                 if st.button(f"**Crop Pose Data**"):
                     with st.spinner("Editing your data..."):
-                        if max_frame>min_frame:
-                            cropped_pose=dict()
-                            for limb, data in pose_to_edit.items():
-                                cropped_pose[limb]=data[min_frame:max_frame:]
-                        elif max_frame==min_frame:
-                            cropped_pose=dict()
-                            for limb, data in pose_to_edit.items():
-                                cropped_pose[limb]=data[min_frame]
+                        cropped_pose=dict()
+                        for limb, data in pose_to_edit.items():
+                            cropped_pose[limb]=data[min_frame:max_frame+1:]
                     st.markdown("Pose data cropped.")
                     cropped_data_download = pickle.dumps(
                         cropped_pose,
