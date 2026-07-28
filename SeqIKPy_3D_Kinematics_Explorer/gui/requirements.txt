@@ -1,7 +1,5 @@
 streamlit
-pathlib
 numpy
 pandas
 plotly
-pickle
 stqdm
