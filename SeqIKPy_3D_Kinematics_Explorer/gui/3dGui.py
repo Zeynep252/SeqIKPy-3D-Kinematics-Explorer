@@ -647,13 +647,13 @@ def ShowInfo():
                 """)
     
 with tab_visualize:
-    left_space,right_space=st.columns([3,2])
-    with left_space:
+    #left_space,right_space=st.columns([3,2])
+    #with left_space:
         Grid3dVisualizer()
 
 with tab_process:
-    left_space,right_space=st.columns([3,2])
-    with left_space:
+    #left_space,right_space=st.columns([3,2])
+    #with left_space:
         with st.expander("Align Raw Pose Data"):
             try:
                 alignment()
@@ -676,7 +676,7 @@ with tab_process:
                 st.error(f"Cannot process leg joint angles data:{e}")
 
 with tab_help:
-    left_space,right_space=st.columns([3,2])
-    with left_space:
+    #left_space,right_space=st.columns([3,2])
+    #with left_space:
         ShowInfo()
 
