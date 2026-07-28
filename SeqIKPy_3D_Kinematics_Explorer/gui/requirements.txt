@@ -2,4 +2,12 @@ streamlit
 numpy
 pandas
 plotly
+matplotlib
+scipy
+ikpy
+joblib
+tqdm
 stqdm
+h5py
+sympy
+opencv-python-headless
