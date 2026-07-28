@@ -1,0 +1,9 @@
+streamlit
+io
+zipfile
+pathlib
+numpy
+pandas
+plotly
+pickle
+stqdm
