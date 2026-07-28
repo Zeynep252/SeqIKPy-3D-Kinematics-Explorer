@@ -362,7 +362,8 @@ def crop():
         with st.spinner("Validating data content..."):
             pose_validate=validate_scientific_data(safe_load_pose)
         st.success("Data succesfully loaded")
-        pose_to_edit=dict(pose_validate)
+        pose_to_edit=pose_validate
+        st.markdown(str(type(pose_to_edit)))
         try:
             num_frames_original=pose_to_edit[list(pose_to_edit.keys())[0]].shape[0]
             st.markdown(f"Crop {aligned_pose_upload_edit.name} of {num_frames_original} frames")
